@@ -54,3 +54,5 @@ sub2 <- bind_rows(activity1, activity2, activity3, activity4, activity5, activit
 
 sub_group <- group_by(sub2, subject_id, activity)
 newdataset <- summarise_at(sub_group, -(1:2), mean)
+
+write.table(newdataset, file = "cleandata.txt", row.names=FALSE)
